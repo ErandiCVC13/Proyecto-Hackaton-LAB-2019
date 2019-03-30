@@ -246,209 +246,21 @@ window.controlador = {
 
 
   posteos: () => {
-    const user = firebase.auth().currentUser;
-    if (window.location.href.includes("wall")) {
-
     
 
-  }
+    const btnAfore = document.getElementById("btn-afore");
+    const vistaDirectorio = document.getElementById("directorio");
+    const vistaBienvenida = document.getElementById("bienvenidas");
+    const homeDisplay = document.getElementById("home");
 
-    var db = firebase.firestore();
-    const emailUser = document.getElementById("emailUser");
-    const emailUserNew = emailUser.textContent
 
-    db.collection("bootcamp").where("email", "==", emailUserNew).get().then((querySnapshot) => {
-      const container = document.getElementById("contenido");
-      container.innerHTML = "";
-
-      querySnapshot.forEach((doc) => {
-        container.innerHTML += `${doc.data().bootcamp} </br>`;
-      });
-    });
-    //Agregar comentarios
-
-    var btnAfore = document.getElementById("btn-afore");
-    var vistaDirectorio = document.getElementById("directorio");
-    var vistaBienvenida = document.getElementById("bienvenida");
     btnAfore.addEventListener("click",()=>{
       vistaBienvenida.style.display = "none"
       vistaDirectorio.style.display = "inline-grid"
     })
+    
 
-    var posteo = document.getElementById("publicar");
-    posteo.addEventListener("click", () => {
-          // var nombre = document.getElementById('nombre').value;
-      const user = firebase.auth().currentUser;
-      // db.collection("usuarios").add({      
-      const photoUser = user.photoURL;
-      const nameUser = user.displayName;
-      const emailUser = user.email;
-      var inputComment = document.getElementById('comentario');
-      var comentario = document.getElementById('comentario').value;
-
-      if (comentario == "") {
-        $("#modal-empty").modal() 
-        
-
-
-      } else {
-
-        
-        firebase.firestore().collection('publicaciones').add({
-          photo: photoUser,
-          autor: nameUser,
-          mensaje: comentario,
-          email: emailUser,
-          like: 0,
-          date: firebase.firestore.FieldValue.serverTimestamp(),
-
-        })
-        inputComment.value="";
-        
-      }
-
-    })
-
-
-    //leer info
-    var muro = document.getElementById('muro');
-    db.collection("publicaciones").orderBy('date', 'desc').onSnapshot((querySnapshot) => {
-      muro.innerHTML = '';
-
-      querySnapshot.forEach((doc) => {
-
-        const user = firebase.auth().currentUser;
-
-        const mailUser = user.email;
-
-        if (mailUser === doc.data().email) {
-          muro.innerHTML += `
-        <div class="container-pub">
-        <div class="alinear">
-          <img src="${doc.data().photo}" class="avatar avatar-img">
-          <p class="avatar-autor">${doc.data().autor}</p>
-          <button id= "${doc.id}"  class="tablasEditar avatar-editar" ><u></u></button>
-          <button id= "${doc.id}"  class="tablas avatar-like" data-like=${doc.data().like} ></button>
-          <p class="number-likes" >${doc.data().like}</p>
-          </div>
-          
-          <textarea class="textarea"id= "txt-${doc.id}" name="textarea" rows="10" cols="50" disabled="true">${doc.data().mensaje}</textarea>
-          <button id= "${doc.id}"  class="tablasEliminar avatar-eliminar" ><u>Eliminar</u></button> 
-          <p  class= "safe-p" id = "guardar-${doc.id}"></p>
-        </div>
-        `
-        } else {
-          muro.innerHTML += `
-          <div class="container-pub">
-          <div class="alinear">
-            <img src="${doc.data().photo}" class="avatar avatar-img">
-            <p class="avatar-autor">${doc.data().autor}</p>
-            
-            <button id= "${doc.id}"  class="tablas avatar-like avatar-like-editar" data-like=${doc.data().like} ></button>
-            <p class="number-likes" >${doc.data().like}</p>
-            </div>
-            
-            <textarea class="textarea"id= "${doc.id}" name="textarea" rows="10" cols="50" disabled="true">${doc.data().mensaje}</textarea>
-            
-            
-          </div>
-          `
-        }
-
-      });
-
-
-      const tablas = document.getElementsByClassName("tablas");
-      for (let i = 0; i < tablas.length; i++) {
-        // let liker = parseInt(tablas[i].value)
-        tablas[i].addEventListener("click", (e) => {
-
-          let id = tablas[i].id;
-          let likeit = parseInt(e.target.dataset.like)
-          likeit++;
-          console.log(likeit)
-
-
-          var sumar = db.collection("publicaciones").doc(id);
-          return sumar.update({
-              like: likeit,
-            }).then(function () { 
-              console.log("Document successfully updated!");
-            })
-            .catch(function (error) {
-              console.error("Error updating document: ", error);
-            });
-
-        })
-
-
-      }
-
-      const tablasEliminar = document.getElementsByClassName('tablasEliminar')
-      for (let i = 0; i < tablasEliminar.length; i++) {
-
-        tablasEliminar[i].addEventListener('click', () => {
-
-          $("#modal-remove").modal()
-          buttonSuccess = document.getElementById("button-success");
-          buttonSuccess.addEventListener("click", () =>{
-            let id = tablasEliminar[i].id
-            db.collection("publicaciones").doc(id).delete().then(function () {
-
-              console.log("Document successfully deleted!");
-            }).catch(function (error) {
-              console.error("Error removing document: ", error);
-            });
-          })
-            
-          })
-        }
-                
-      const tablasEditar = document.getElementsByClassName('tablasEditar')
-      
-      for (let i = 0; i < tablasEditar.length; i++) {
-
-        tablasEditar[i].addEventListener('click', () => {
-          $("#modalEdit").modal()
-          buttonEdit = document.getElementById("button-edit");
-          buttonEdit.addEventListener("click", () =>{
-            let id = tablasEditar[i].id;
-
-            document.getElementById("txt-" + id).disabled = false;
-
-            const guardar = document.getElementById("guardar-"+id);
-            guardar.innerHTML = `<button id= "guardarbtn"  class="avatar-eliminar" ><u>Guardar</u></button> `;
-
-            guardar.addEventListener("click", () => {
-
-              const msjEditado = document.getElementById("txt-" + id).value;
-              
-              if (msjEditado == "") {
-                $("#inputClear").modal()
-                // alert("Debes agregar un COMENTARIO!!");
-        
-              }else{
-              var publiEditada = db.collection("publicaciones").doc(id);
-              
-              return publiEditada.update({
-                  mensaje: msjEditado
-
-                })
-                .then(function () {
-                  console.log("Document successfully updated!");
-                  document.getElementById("txt-" + id).disabled = true;
-                  guardar.innerHTML = "";
-                })
-                .catch(function (error) {
-                  // The document probably doesn't exist.
-                  console.error("Error updating document: ", error);
-                });
-              }
-            })
-          })
-        })
-      }
-    });
+    
   }
 
 

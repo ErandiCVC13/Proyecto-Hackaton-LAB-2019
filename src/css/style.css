@@ -609,5 +609,37 @@ display: inline-block
 
 #directorio{
    margin-top: 52px;
+   margin-bottom: 48px;
    display: none;
 }
+
+.fixed-bottom {
+   position: fixed;
+   right: 0px;
+   bottom: 0;
+   left: 0px;
+   z-index: 1030;
+   background-color: #2ab4dc;
+   text-align: center;
+   height: 51px;
+}
+
+.nav__item{
+   color: white;
+       text-decoration: blink;
+       font-family: sans-serif;
+       padding: 10%;
+       font-size: 26px;
+       vertical-align: bottom;
+ }
+
+ .sin-hover:hover {
+   color: #9E9E9E;
+ }
+
+ .bienvenida-Afo{
+   font-size: 5vw;
+   color: #4AAF29;
+   width: 50%;}
+
+   
