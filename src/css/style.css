@@ -1,7 +1,7 @@
 html,
 body {
-   background-color: #2E2E2E;
-   color: white;
+   background: #EEEEE8;
+   color: black;
 
 }
 
@@ -286,6 +286,45 @@ button:hover {
    cursor: pointer;
 }
 
+.afore-logo {
+   display: inline-block;
+   margin-left: 62%;
+   margin-top: -141px;
+   width: 125px;
+   opacity: 0.5;
+}
+
+.iconos {
+   width: 21px;
+   padding: 1%;
+}
+
+.alinear-icono {
+   display: -webkit-box;
+}
+
+.contacto {
+   display: inline-block;
+   text-align: left;
+   padding: 3%;
+}
+
+.text-afore {
+   padding: 0%;
+   margin: 0%;
+   text-align: left;
+   margin-left: 5px;
+}
+
+.container-pub {
+   width: 96vw;
+   height: 93px;
+   margin: 2%;
+   -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+   box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+   background: #FFFFFF;
+}
+
 .avatar {
    width: 45px;
    height: 45px;
@@ -294,8 +333,11 @@ button:hover {
    margin-top: -5px;
 }
 
-.container-pub {
-   background-color: #343A40;
+
+
+body#tinymce {
+   background: #FFFFFF;
+
    border-radius: 10px;
    margin-bottom: 3em;
    text-align: center;
@@ -431,31 +473,36 @@ button:hover {
 .font-slogan {
    font-size: 5vw;
 }
-.color-modal{
-   color:black;
+
+.color-modal {
+   color: black;
    height: 4em;
 }
-.color-header{
-   height: 3em
 
+.color-header {
+   height: 3em
 }
-.modal-top{
+
+.modal-top {
    margin-top: 8em;
 }
-.color-black{
+
+.color-black {
    color: black;
 }
-.safe-p{
+
+.safe-p {
    width: 100%;
 }
 
-@media screen and (min-width: 600px)  {
-.container-pub {
+@media screen and (min-width: 600px) {
+   .container-pub {
       display: inline-block;
       width: 45%;
-      margin-left:3%
-}
-.number-likes{
-   margin-left: 91%;
-}
+      margin-left: 3%
+   }
+
+   .number-likes {
+      margin-left: 91%;
+   }
 }

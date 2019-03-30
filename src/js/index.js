@@ -178,20 +178,7 @@ window.controlador = {
       });
     });
 
-    buttonSignInGit.addEventListener("click", () => {
-      var provider = new firebase.auth.GithubAuthProvider();
-
-      firebase.auth().signInWithRedirect(provider).then(function (result) {}).catch(function (error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-        var email = error.email;
-        console.log(email);
-        var credential = error.credential;
-        console.log(credential)
-      });
-    });
+    
 
 
     signinGoogle.addEventListener("click", () => {
@@ -225,7 +212,7 @@ window.controlador = {
       var user = user;
       var providerId = user.providerData[0].providerId;
 
-      if (user.emailVerified || providerId == "facebook.com" || providerId == "github.com") {
+      if (user.emailVerified || providerId == "facebook.com") {
         window.location.hash = '#/wall';
         //poniendolo antes de las variables y dentro del settimeout
         setTimeout(function () {
