@@ -225,7 +225,7 @@ window.controlador = {
       var user = user;
       var providerId = user.providerData[0].providerId;
 
-      if (user.emailVerified || providerId == "facebook.com" || providerId == "github.com") {
+      if (user.emailVerified || providerId == "facebook.com" || providerId == "github.com" ) {
         window.location.hash = '#/wall';
         //poniendolo antes de las variables y dentro del settimeout
         setTimeout(function () {
@@ -246,16 +246,27 @@ window.controlador = {
           let nameUser = document.getElementById("name-user");
           let avatarUser = document.getElementById("avatar-user");
           let email = user.email;
-          nameUser.innerHTML = `<p> ${user.displayName} </p>`
+          nameUser.innerHTML = `<p> ${user.displayName} !</p>`
           emailUser.innerHTML = `${email}`
           avatarUser.innerHTML = `<img class="avatar" src="${user.photoURL}">`
         }, 500);
       }
-    }
+
+          
+         
+          }
+ 
+          
   },
+
+
   posteos: () => {
+    const user = firebase.auth().currentUser;
+    if (window.location.href.includes("wall")) {
 
+    
 
+  }
 
     var db = firebase.firestore();
     const emailUser = document.getElementById("emailUser");

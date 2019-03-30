@@ -1,7 +1,9 @@
 html,
 body {
-   background-color: #2E2E2E;
-   color: white;
+   background-color: white;
+   /* color: white; */
+   /* height: 100%; */
+   font-family: 'Lato', sans-serif;
 
 }
 
@@ -21,7 +23,7 @@ body {
 }
 
 input::placeholder {
-   color: white;
+   color: gray;
 }
 
 
@@ -29,6 +31,7 @@ input::placeholder {
    padding-top: 0%;
    padding-left: 0%;
    color: #2E2E2E;
+   border: none;
 }
 
 .titleWall {
@@ -46,20 +49,22 @@ h1 {
    font-size: 50px;
    padding: 15px;
    position: static;
-   color: #7fff00;
+   color:  #2ab4dc;
    font-family: 'ZCOOL QingKe HuangYou', cursive;
    text-align: center;
 }
 
 
 #blockBar {
-   background-color: #2E2E2E;
+   background-color: #2ab4dc;
    position: fixed;
    display: block;
    width: 100%;
-   padding: 2px 15px 18px 0px;
+   padding: 2px 15px 10px 25px;
    top: 0px;
    z-index: 10;
+   padding-left: 3%;
+   padding-top: 2%;
 
 }
 
@@ -91,11 +96,7 @@ a.nav-item {
    color: white;
 }
 
-#infoUser {
-   text-align: center;
-   color: white;
-   font-size: 16px;
-}
+
 
 .comments {
    height: auto;
@@ -142,7 +143,8 @@ h4 {
    border-right: none;
    color: white;
    width: 100%;
-   background-color: #2e2e2e;
+   background-color: white;
+   border-color: #6b6b6b;
 
 }
 
@@ -171,13 +173,18 @@ input:focus {
    color: white;
    width: 100%;
    height: 3em;
-   border-radius: 2px;
+   border-radius: 10px;
    border: none;
 }
 
 .color-login {
-   background-color: #47525e;
+   background-color: #2ab4dc;
    margin-top: 1em;
+   border-radius: 10px;
+   width: 90%;
+   text-align: center;
+   margin-left: 5%;
+  
 }
 
 .color-twitter {
@@ -202,8 +209,8 @@ button img {
 }
 
 header {
-   text-align: center;
-   color: chartreuse;
+   
+   color:white;
    margin-top: 1rem;
    margin-bottom: 1rem;
    border: 0;
@@ -218,17 +225,18 @@ header {
 
 p {
    padding-top: 1em;
-   text-align: center;
-}
+   /* text-align: center;
+} */}
 
 footer {
-
-   background-color: black;
+   background-color: #035472;
    width: 100%;
    text-align: center;
    padding: 10px;
    color: grey;
-   margin-top: 7em;
+   /* margin-top: 0em; */
+   position: sticky;
+   top: 3em;
 }
 
 .modal-background {
@@ -242,9 +250,7 @@ footer {
 
 }
 
-button:hover {
-   opacity: .8;
-}
+
 
 .select-class {
    width: 60%;
@@ -281,9 +287,15 @@ button:hover {
 }
 
 .btn-avatar:hover {
-   border-color: chartreuse;
+   border-color: white;
    border-width: 4.2px;
    cursor: pointer;
+   display: inline-block
+}
+.cochinito-title{
+   display: inline-block;
+   margin-left: 23%;
+   font-size: 5vw;
 }
 
 .avatar {
@@ -400,11 +412,18 @@ button:hover {
    font-size: .9em;
    float: left;
 }
+.color-blue{
+   background-color:#035472;
+}
+.imagen-fondo{
+   background-image: url(https://image.flaticon.com/icons/svg/53/53567.svg);
+
+}
 
 .register-div {
-   margin-top: 109px;
-   margin-left: 3%;
-   margin-right: 3%;
+   margin-top: 0em;
+   /* margin-left: 3%;
+   margin-right: 3%; */
 
 }
 
@@ -448,7 +467,87 @@ button:hover {
 .safe-p{
    width: 100%;
 }
+.section-class{
+   height: 34em;
+   color: black;
+   margin-top:10%;
+   background-color: #e0e0e054;
+   
 
+}
+.boton-cal{
+   height: 2.5em;
+   display: inline-block;
+   width: 42%;
+   margin-left: 5%;
+   margin-top: 1em;
+   background-color: #ffffff;
+   font-size: 4vw;
+   color: #035472;
+}
+.display-inline{
+display: inline-block
+}
+.input-left{
+   width: 43%;
+   display: inline-block;
+   margin-right: 5%;
+   border-radius: 10px;
+   height: 2.5em;
+   padding-left: 2%;
+}
+.input-rigth{
+   width: 44%;
+    display: inline-block;
+    margin-left: 5%;
+    border-radius: 10px;
+    height: 2.5em;
+    padding-left: 2%;
+}
+.font-size{
+   font-size: 3vw;
+   margin-right: 8%;
+}
+.card-style{
+   width: 100%;
+   height: 2.5em;
+   border-radius: 10px;
+   padding-left: 2%;
+}
+.text-align{
+   text-align: center;
+}
+.ocult{
+   display: none;
+}
+.name-user{
+   font-size: 7vw;
+   color:  rgb(74, 175, 41);
+   margin: 0px;
+   padding: 0px;
+   width: 30%;
+}
+.bienvenida{
+   font-size: 7vw;
+   color: #4AAF29;
+   width: 50%;
+}
+.ahorrando{
+   font-size: 4.5vw;
+   /* margin: 0px; */
+   padding: 0px;
+   /* margin-bottom: 1em; */
+   color: gray;
+}
+.acercando{
+   color: #404446;
+   font-size: 6vw;
+   margin: 0px;
+}
+.puerquito{
+   width: 16%;
+   margin-left: 43%;
+}
 @media screen and (min-width: 600px)  {
 .container-pub {
       display: inline-block;
@@ -457,5 +556,7 @@ button:hover {
 }
 .number-likes{
    margin-left: 91%;
+  
 }
+
 }
