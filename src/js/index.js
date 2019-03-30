@@ -24,12 +24,12 @@ window.controlador = {
       let name = nombre.value;
       const addForm = document.forms.namedItem("add-form");
       let select = document.getElementById("select")
-      const selectBoot = select.value
+      // const selectBoot = select.value
       
 
       
       
-      if (signInValue == "" ||  passwordValue == "" || name == "" || selectBoot == "Selecciona Bootcamp") {
+      if (signInValue == "" ||  passwordValue == "" || name == "") {
         $("#modal-reg").modal() 
       }else{
       
@@ -80,7 +80,7 @@ window.controlador = {
   
   
           db.collection("bootcamp").add({
-              bootcamp:selectBoot,
+              
               email: addForm.elements.email.value,
   
             })
@@ -240,6 +240,7 @@ window.controlador = {
           
          
           }
+          
  
           
   },
@@ -251,17 +252,18 @@ window.controlador = {
     const btnAfore = document.getElementById("btn-afore");
     const vistaDirectorio = document.getElementById("directorio");
     const vistaBienvenida = document.getElementById("bienvenidas");
-    const homeDisplay = document.getElementById("home");
+    
 
 
     btnAfore.addEventListener("click",()=>{
       vistaBienvenida.style.display = "none"
       vistaDirectorio.style.display = "inline-grid"
     })
-    
-
-    
+    const btnCards = document.getElementById("btn-cards");
+    const vistaCards = document.getElementById("vista-cards");
+    btnCards.addEventListener("click",()=>{
+      vistaBienvenida.style.display = "none"
+      vistaCards.style.display = "inline-grid"
+    })
   }
-
-
 }
