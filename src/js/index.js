@@ -1,7 +1,5 @@
 window.controlador = {
 
-  
-
   registro: () => {
     const signIn = document.getElementById("sign-in-new");
     const password = document.getElementById("password-new");
