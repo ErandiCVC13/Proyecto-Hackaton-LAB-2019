@@ -231,16 +231,27 @@ window.controlador = {
           let nameUser = document.getElementById("name-user");
           let avatarUser = document.getElementById("avatar-user");
           let email = user.email;
-          nameUser.innerHTML = `<p> ${user.displayName} </p>`
+          nameUser.innerHTML = `<p> ${user.displayName} !</p>`
           emailUser.innerHTML = `${email}`
           avatarUser.innerHTML = `<img class="avatar" src="${user.photoURL}">`
         }, 500);
       }
-    }
+
+          
+         
+          }
+ 
+          
   },
+
+
   posteos: () => {
+    const user = firebase.auth().currentUser;
+    if (window.location.href.includes("wall")) {
 
+    
 
+  }
 
     var db = firebase.firestore();
     const emailUser = document.getElementById("emailUser");
@@ -255,6 +266,15 @@ window.controlador = {
       });
     });
     //Agregar comentarios
+
+    var btnAfore = document.getElementById("btn-afore");
+    var vistaDirectorio = document.getElementById("directorio");
+    var vistaBienvenida = document.getElementById("bienvenida");
+    btnAfore.addEventListener("click",()=>{
+      vistaBienvenida.style.display = "none"
+      vistaDirectorio.style.display = "inline-grid"
+    })
+
     var posteo = document.getElementById("publicar");
     posteo.addEventListener("click", () => {
           // var nombre = document.getElementById('nombre').value;
