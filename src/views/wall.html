@@ -1,54 +1,56 @@
 <header>
-    <nav class="nav justify-content-center" id="blockBar">
-        <button class="navbar-toggler btn-avatar" data-toggle="collapse" data-target="#navbarMenu" >
-            <span id="avatar-user"></span>
-        </button>
-        <p class="cochinito-title">Ahorra+</p>
-        <button id="signOut" style="color: white;
+  <nav class="nav justify-content-center" id="blockBar">
+    <button class="navbar-toggler btn-avatar" data-toggle="collapse" data-target="#navbarMenu">
+      <span id="avatar-user"></span>
+    </button>
+    <p class="cochinito-title">Ahorra+</p>
+    <button id="signOut" style="color: white;
         border: none;
         background-color: #2ab4dc;
         margin-left: 20%;
         font-size: 8vw;"><i class="fas fa-sign-out-alt"></i></button>
 
-        <div class="collapse navbar-collapse" id="navbarMenu">
-        
-          <!-- <ul class="navbar-nav" id="infoUser">
+    <div class="collapse navbar-collapse" id="navbarMenu">
+
+      <!-- <ul class="navbar-nav" id="infoUser">
                 <br>
                 <li>Bienvenid@</li>
                 <li id="name-user"></li>
                 <p id="emailUser"></p><br>
             </ul> -->
-            <div id="contenido"></div>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <div id="showme">
-                        
-                    </div>
-                </li>
-            </ul>
-    </nav>
+      <div id="contenido"></div>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <div id="showme">
+
+          </div>
+        </li>
+      </ul>
+  </nav>
 </header>
 
-<section class="color-white section-class">
+<section class="color-white section-class" id="bienvenida">
   <ul class="navbar-nav " id="infoUser">
     <br>
     <div class="display-inline">
-    <p class="text-align display-inline bienvenida">¡Bienvenida</p>
-    <p  class="text-align name-user display-inline" id="name-user" ></p>
-  </div>
+      <p class="text-align display-inline bienvenida">¡Bienvenida</p>
+      <p class="text-align name-user display-inline" id="name-user"></p>
+    </div>
     <p class="text-align ocult" id="emailUser"></p><br>
     <p class="text-align acercando">Ahorrando la diferencia</p>
-    <p class="text-align ahorrando">acercandonos al futuro</p>
-    <img  class="puerquito" src="assets/img/ahorro.png" alt="" srcset="">
-    <button type="button" class="btn color-login button-nav" data-toggle="modal" data-target="#exampleModal">Vincula tu tarjeta </button>
+    <p class="text-align ahorrando">Acercandonos al futuro</p>
+    <img class="puerquito" src="assets/img/ahorro.png" alt="" srcset="">
+    <button type="button" class="btn color-login button-nav" data-toggle="modal" data-target="#exampleModal">Vincula tu
+      tarjeta </button>
     <!-- <a class="color-login button-nav" href="#/registro">Vincula tu tarjeta</a> -->
     <div class="display-inline">
-    <button class="boton-cal color-login" ><b>Mis tarjetas </b></button>
-    <button class="boton-cal color-login"><b>Afores</b></button>
-    
-   
-  </div>
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <button class="boton-cal color-login"><b>Mis tarjetas </b></button>
+      <button class="boton-cal color-login" id="btn-afore"><b>Afores</b></button>
+
+
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -58,31 +60,21 @@
             </button>
           </div>
           <div class="modal-body">
-              <form data-toggle="validator display-inline" role="form" name="add-form">
-                  <p>NUMERO DE TARJETA</p>
-                  <input class="margin-input mr-sm-2 card-style " type="text" name="userId" placeholder="XXXX XXXX XXXX XXXX" >
-                  <p>TITULAR(NOMBRE EN LA TARJETA)</p>
-                  <input class="input-left margin-input mr-sm-2" type="text" name="userId" placeholder="Nombre" >
-                  <input class="input-rigth margin-input mr-sm-2" type="text" name="userId" placeholder="Apellido" >
-                  <p class="display-inline font-size">FECHA DE EXPIRACION</p>
-                  <p class="display-inline font-size">CODIGO DE SEGURIDAD</p>
-                  <input class="input-left margin-input mr-sm-2" type="text" name="userId" placeholder="MM/YY" >
-                  
-                  <input class="input-rigth margin-input mr-sm-2" type="text" name="userId" placeholder="CVV" >
-                  <!-- <section id="error-reg"></section> -->
-                  <!-- <select id="select" class="margin-input select-class" name="select">
-              
-                    <option>Selecciona Bootcamp</option>
-                    <option value="Bedu" name="boot">Bedu</option>
-                    <option value="Iron Hack" name="boot">Iron Hack</option>
-                    <option value="Hub Camps" name="boot">Hub Camps</option>
-                    <option value="Muktek" name="boot">Muktek</option>
-                    <option value="Le wong" name="boot">Le Wong</option>
-                    <option value="Laboratoria" name="boot">Laboratoria</option>
-                    <option value="Tec de Monterrey" name="boot">Tec de Monterrey</option>
-                  </select> -->
-                  <p id="modal-invalid-email"></p>
-                </form>
+            <form data-toggle="validator display-inline" role="form" name="add-form">
+              <p>NUMERO DE TARJETA</p>
+              <input class="margin-input mr-sm-2 card-style " type="text" name="userId"
+                placeholder="XXXX XXXX XXXX XXXX">
+              <p>TITULAR(NOMBRE EN LA TARJETA)</p>
+              <input class="input-left margin-input mr-sm-2" type="text" name="userId" placeholder="Nombre">
+              <input class="input-rigth margin-input mr-sm-2" type="text" name="userId" placeholder="Apellido">
+              <p class="display-inline font-size">FECHA DE EXPIRACION</p>
+              <p class="display-inline font-size">CODIGO DE SEGURIDAD</p>
+              <input class="input-left margin-input mr-sm-2" type="text" name="userId" placeholder="MM/YY">
+
+              <input class="input-rigth margin-input mr-sm-2" type="text" name="userId" placeholder="CVV">
+
+              <p id="modal-invalid-email"></p>
+            </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -91,97 +83,126 @@
         </div>
       </div>
     </div>
-</ul>
-
-
+  </ul>
 </section>
-<footer>Geek it Derechos Reservados 2019. Red InterBootcamp.</footer>
-<!-- 
-<div class="container">
-        <div class="modal fade" id="modal-empty" role="dialog">
-                <div class="modal-dialog modal-sm">
-                  <div class="modal-content modal-top">
-                    <div class="modal-header color-header">
-                        <h4 class="modal-title color-green">Opps!</h4>
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      
-                    </div>
-                    <div class="modal-body">
-                      <p class="color-modal "> Tú publicacion esta vacia</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="containerModal">
-                    <div class="modal fade" id="modal-remove" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                              <div class="modal-content modal-top">
-                                <div class="modal-header">
-                                  <h5 class="modal-title color-green" id="exampleModalLabel">Confirmación</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body">
-                                  <p class="color-black">¿Estas seguro de querer eliminar esta publicacion para <span class="color-green"><b>¡SIEMPRE! </b></span>\o/ ?</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                  <button id="button-success" type="button" class="btn btn-success" data-dismiss="modal">Eliminar</button>
-                                  
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                  <div class="modal-content modal-top">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title color-green" id="exampleModalLabel">Confirmación</h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                    </div>
-                                    <div class="modal-body">
-                                      <p class="color-black">¿Quieres editar esta publicacion?</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                      
-                                      <button id="button-edit" type="button" class="btn btn-success" data-dismiss="modal">Editar</button>
-                                      
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="modal fade" id="inputClear" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                      <div class="modal-content modal-top">
-                                        <div class="modal-header">
-                                          <h5 class="modal-title color-green" id="exampleModalLabel">Noooo!</h5>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        </div>
-                                        <div class="modal-body">
-                                          <p class="color-modal">No puedes publicar un mensaje vacio  -_-</p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
 
-            </div>
-
-    <div class="text-area-publicar">
-        <textarea class="text-area" id="comentario" placeholder="¿Qué estás pensando?"></textarea>
-
-        <button class="button-publicar style-publicar" id="publicar">Publicar</button>
-
+<section id="directorio" >
+    <p class="cochinito-title">Directorio de AFORES</p>
+    <div class="container-pub">
+      <div class="contacto">
+        <p class="text-afore">PROFUTURO AFORE</p>
+        <div class="alinear-icono"><img class="iconos" src="assets/img/telefono.png">
+          <p class="text-afore">01 800 715 55 55</p>
+        </div>
+        <img class="iconos" src="assets/img/global.png"><a class="text-afore" href="http://www.profuturo.mx/content/wps/portal/Grupo-Profuturo/">www.profuturo.mx</a>   
+      </div>
+      <span class="logo"><img src="assets/img/afore-profuturo-gnp.jpg" class="afore-logo"></span>
     </div>
-    <br>
+  
+    <div class="container-pub">
+      <div class="contacto">
+        <p class="text-afore">AFORE SURA</p>
+        <div class="alinear-icono"><img class="iconos" src="assets/img/telefono.png">
+          <p class="text-afore"> 01 44 33 108 192</p>
+        </div>
+        <img class="iconos" src="assets/img/global.png"><a class="text-afore" href="https://www.suramexico.com/home/">www.suramexico.com/afore</a>
+      </div>
+      <span class="logo"><img src="assets/img/afore-sura.jpg" class="afore-logo"></span>
+    </div>
+  
+    <div class="container-pub">
+      <div class="contacto">
+        <p class="text-afore">CITIBANAMEX AFORE</p>
+        <div class="alinear-icono"><img class="iconos" src="assets/img/telefono.png">
+          <p class="text-afore">01 800 282 36 73</p>
+        </div>
+        <img class="iconos" src="assets/img/global.png"><a class="text-afore" href="https://www.aforebanamex.com.mx/">
+        www.aforebanamex.com.mx</a>
+      </div>
+      <span class="logo"><img src="assets/img/afore-banamex.jpg" class="afore-logo"></span>
+    </div>
+  
+    <div class="container-pub">
+      <div class="contacto">
+        <p class="text-afore">AFORE COPPEL</p>
+        <div class="alinear-icono"><img class="iconos" src="assets/img/telefono.png">
+          <p class="text-afore">01 800 267 73 52</p>
+        </div>
+        <img class="iconos" src="assets/img/global.png"><a class="text-afore" href="https://www.aforecoppel.com/"> www.aforecoppel.com</a>
+      </div>
+      <span class="logo"><img src="assets/img/afore-coppel.jpg" class="afore-logo"></span>
+    </div>
+  
+    <div class="container-pub">
+      <div class="contacto">
+        <p class="text-afore">AFORE INBURSA</p>
+        <div class="alinear-icono"><img class="iconos" src="assets/img/telefono.png">
+          <p class="text-afore">01 800 909 00 00 </p>
+        </div>
+        <img class="iconos" src="assets/img/global.png"><a class="text-afore" href="https://www.inbursa.com/Portal/?id_category=1">www.inbursa.com</a>
+      </div>
+      <span class="logo"><img src="assets/img/afore-inbursa.jpg" class="afore-logo"></span>
+    </div>
+  
+    <div class="container-pub">
+      <div class="contacto">
+        <p class="text-afore">PENSIONISSSTE</p>
+        <div class="alinear-icono"><img class="iconos" src="assets/img/telefono.png">
+          <p class="text-afore">01 800 400 10 00</p>
+        </div>
+        <img class="iconos" src="assets/img/global.png"><a class="text-afore" href="https://www.gob.mx/pensionissste"> www.gob.mx/pensionissste</a>
+      </div>
+      <span class="logo"><img src="assets/img/afore-pensionissste.jpg" class="afore-logo"></span>
+    </div>
+  
+    <div class="container-pub">
+        <div class="contacto">
+          <p class="text-afore"> AFORE AZTECA</p>
+          <div class="alinear-icono"><img class="iconos" src="assets/img/telefono.png">
+            <p class="text-afore">01 800 112 13 13</p>
+          </div>
+          <img class="iconos" src="assets/img/global.png"><a class="text-afore" href="https://www.aforeazteca.com.mx/">
+            www.aforeazteca.com.mx</a>
+        </div>
+        <span class="logo"><img src="assets/img/afore-azteca.jpg" class="afore-logo"></span>
+      </div>
+  
+    <div class="container-pub">
+      <div class="contacto">
+        <p class="text-afore">AFORE XXI BANORTE</p>
+        <div class="alinear-icono"><img class="iconos" src="assets/img/telefono.png">
+          <p class="text-afore">01 55 2000 1994</p>
+        </div>
+        <img class="iconos" src="assets/img/global.png"><a class="text-afore" href="https://www.xxi-banorte.com/aforeXB/afore/index.aspx#!/">www.xxi-banorte.com</a>
+      </div>
+      <span class="logo"><img src="assets/img/afore-XXIbanorte.jpg" class="afore-logo"></span>
+    </div>
+  
+    <div class="container-pub">
+      <div class="contacto">
+        <p class="text-afore">PRINCIPAL AFORE</p>
+        <div class="alinear-icono"><img class="iconos" src="assets/img/telefono.png">
+          <p class="text-afore">01 800 277 46 24</p>
+        </div>
+        <img class="iconos" src="assets/img/global.png"><a class="text-afore" href="https://www.principal.com.mx/es/">www.principal.com.mx</a>
+      </div>
+      <span class="logo"><img src="assets/img/afore-principal.jpg" class="afore-logo"></span>
+    </div>
+  
+    <div class="container-pub">
+      <div class="contacto">
+        <p class="text-afore">INVERCAP AFORE</p>
+        <div class="alinear-icono"><img class="iconos" src="assets/img/telefono.png">
+          <p class="text-afore">01 800 522 23 67</p>
+        </div>
+        <img class="iconos" src="assets/img/global.png"><a class="text-afore" href="https://www.invercap.com.mx/home/Default.aspx">www.invercap.com.mx</a>
+      </div>
+      <span class="logo"><img src="assets/img/afore-invercap.jpg" class="afore-logo"></span>
+    </div>
+  
+    
+  
+  </section>
+  
 
-    <section id="muro">
-    </section>
-
-</div>
- -->
+<footer>Derechos Reservados 2019.</footer>
